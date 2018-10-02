@@ -30,7 +30,7 @@ def draw_character(p1, p2):
 
         update_canvas()
         delay(0.05)
-
+ 
 
 points = [(random.randint(0, 800), random.randint(0, 600)) for i in range(size)]
 
