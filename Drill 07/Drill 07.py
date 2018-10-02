@@ -29,9 +29,10 @@ def draw_character(p1, p2):
             animation_sheet.clip_draw(frame * 100, 100 * 0, 100, 100, x, y)
 
         update_canvas()
+        delay(0.05)
 
 
-points = [(random.randint(0, 400), random.randint(0, 300)) for i in range(size)]
+points = [(random.randint(0, 800), random.randint(0, 600)) for i in range(size)]
 
 n = 1
 while True:
