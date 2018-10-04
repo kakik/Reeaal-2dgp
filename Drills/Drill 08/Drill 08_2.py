@@ -13,6 +13,9 @@ frame = 0
 
 def draw_character(point_1,point_2,x,y):
     global frame
+    global now
+    global points
+    global size
     clear_canvas()
     KPU_GROUND.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
 
@@ -22,6 +25,12 @@ def draw_character(point_1,point_2,x,y):
         animation_sheet.clip_draw(frame * 100, 100 * 1, 100, 100, x, y)
     else:
         animation_sheet.clip_draw(frame * 100, 100 * 0, 100, 100, x, y)
+
+    for i in range(0, now+1):
+        if (points[i][0] < points[i-size][0]):
+            animation_sheet.clip_draw(0, 100 * 1, 100, 100, points[i][0],points[i][1])
+        else:
+            animation_sheet.clip_draw(0, 100 * 0, 100, 100,points[i][0],points[i][1])
 
     update_canvas()
 
@@ -39,14 +48,19 @@ def draw_curve_point(points_0,points_1,points_2,points_3):
         delay(0.05)
 
 
-n = 2
-size = 4
-
+n = 0
+size = 10
+now=0
+passed_all=False
 points = [(random.randint(0, 800), random.randint(0, 600)) for i in range(size)]
 
 while True:
     draw_curve_point(points[(n-1)%size],points[n%size],points[(n+1)%size],points[(n+2)%size])
     n = (n + 1) % size
+    if(passed_all==False):
+        now+=1
+        if(now>=9):
+            passed_all=True
 
 
 
