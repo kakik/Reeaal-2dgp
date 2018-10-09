@@ -29,5 +29,10 @@ class Character:
 
 
 
+class Grass:
+    def __init__(self):
+        self.x = 400
+        self.y = 30
 
-
+    def draw(self):
+        grass.draw(self.x, self.y)
