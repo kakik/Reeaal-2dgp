@@ -12,3 +12,22 @@ ball_1 = load_image("ball41x41.png")
 ball_2 = load_image("ball21x21.png")
 
 
+class Character:
+    def __init__(self):
+        self.x = random.randint(0, 400)
+        self.y = 90
+        self.speed = random.randint(5, 10)
+        self.frame = 0
+
+    def move(self):
+        self.x += self.speed
+        self.frame = (self.frame+1) % 8
+
+    def draw(self):
+        if self.x < 800:
+            run_animation.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y)
+
+
+
+
+
