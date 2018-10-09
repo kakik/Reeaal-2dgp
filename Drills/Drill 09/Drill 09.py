@@ -36,3 +36,32 @@ class Grass:
 
     def draw(self):
         grass.draw(self.x, self.y)
+
+class Ball:
+    def __init__(self):
+        self.x = random.randint(0, 800)
+        self.y = 599
+        self.speed = random.randint(3, 10)
+        self.ball_size=random.randint(0,2)
+
+    def move(self):
+        if self.ball_size == 0:
+            if self.y>= (60+20):
+                self.y-=self.speed
+
+
+        elif self.ball_size == 1:
+            if self.y>= (60+0):
+                self.y-=self.speed
+
+
+    def draw(self):
+        if self.ball_size == 0:
+            ball_1.draw(self.x, self.y)
+        elif self.ball_size == 1:
+            ball_2.draw(self.x, self.y)
+
+
+
+
+    
