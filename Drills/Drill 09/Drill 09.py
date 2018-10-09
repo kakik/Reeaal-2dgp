@@ -64,4 +64,25 @@ class Ball:
 
 
 
-    
+
+character = [Character() for i in range(10)]
+ball = [Ball() for j in range(20)]
+grass_ = Grass()
+
+while True:
+    clear_canvas()
+    grass_.draw()
+
+    for i in range(0,10):
+        character[i].move()
+        character[i].draw()
+
+    for i in range(0, 20):
+        ball[i].move()
+        ball[i].draw()
+
+    update_canvas()
+    delay(0.05)
+
+
+
