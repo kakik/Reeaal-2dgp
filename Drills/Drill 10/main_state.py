@@ -83,6 +83,7 @@ def handle_events():
             if event.key == SDLK_RIGHT:
                 if boy.dir==-1:
                     boy.dir=0
+                    boy.stop_direction = 1
                 elif boy.dir==0:
                     boy.dir=1
 
