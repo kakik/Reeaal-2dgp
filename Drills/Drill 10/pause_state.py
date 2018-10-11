@@ -10,7 +10,7 @@ def enter():
     global image
     global flicker_time
     image = load_image('pause.png')
-    flicker_time=0
+    flicker_time=1
 
 def exit():
     global image
@@ -38,12 +38,13 @@ def draw():
         image.draw(400, 300)
 
     update_canvas()
+    delay(0.5)
 
 
 def update():
     global flicker_time
     flicker_time=(flicker_time+1)%2
-    delay(0.5)
+
 
 
 def pause():
