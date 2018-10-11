@@ -17,7 +17,7 @@ class Character:
         self.x = random.randint(0, 400)
         self.y = 90
         self.speed = random.randint(5, 10)
-        self.frame = 0
+        self.frame = random.randint(0,8)
 
     def move(self):
         self.x += self.speed
