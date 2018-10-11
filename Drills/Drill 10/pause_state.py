@@ -4,11 +4,13 @@ import main_state
 
 name = "Pause_state"
 image = None
-
+flicker_time = None
 
 def enter():
     global image
+    global flicker_time
     image = load_image('pause.png')
+    flicker_time=0
 
 def exit():
     global image
@@ -26,13 +28,22 @@ def handle_events():
                 game_framework.pop_state()
 
 
+
 def draw():
-    image.draw(400, 300)
+    main_state.draw()
+
+    global flicker_time
+
+    if flicker_time==0:
+        image.draw(400, 300)
+
     update_canvas()
 
 
 def update():
-    pass
+    global flicker_time
+    flicker_time=(flicker_time+1)%2
+    delay(0.5)
 
 
 def pause():
