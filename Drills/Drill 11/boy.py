@@ -161,6 +161,7 @@ class Boy:
             self.cur_state = next_state_table[self.cur_state][event]
             self.cur_state.enter(self, event)
 
+
     def draw(self):
         self.cur_state.draw(self)
 
