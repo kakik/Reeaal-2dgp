@@ -163,6 +163,7 @@ class Boy:
 
 
 
+
     def draw(self):
         self.cur_state.draw(self)
 
