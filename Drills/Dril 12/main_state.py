@@ -8,16 +8,14 @@ import game_world
 
 from boy import Boy
 from grass import Grass
-from ball import Ball
 
 
 name = "MainState"
 
 boy = None
-grass = None
 
 def enter():
-    global boy, grass
+    global boy
     boy = Boy()
     grass = Grass()
     game_world.add_object(grass, 0)
@@ -45,12 +43,11 @@ def handle_events():
         else:
             boy.handle_event(event)
 
-    delay(0.01)
-
 
 def update():
     for game_object in game_world.all_objects():
         game_object.update()
+    # fill here
 
 
 def draw():
@@ -58,7 +55,6 @@ def draw():
     for game_object in game_world.all_objects():
         game_object.draw()
     update_canvas()
-
 
 
 
