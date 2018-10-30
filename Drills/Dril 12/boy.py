@@ -36,6 +36,7 @@ key_event_table = {
 
 class IdleState:
 
+
     @staticmethod
     def enter(boy, event):
         if event == RIGHT_DOWN:
@@ -48,6 +49,7 @@ class IdleState:
             boy.velocity += RUN_SPEED_PPS
         boy.start_time = get_time()
         boy.current_time = 0.0
+
 
     @staticmethod
     def exit(boy, event):
