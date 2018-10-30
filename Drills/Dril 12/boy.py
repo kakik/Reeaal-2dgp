@@ -49,7 +49,6 @@ class IdleState:
         boy.start_time = get_time()
         boy.current_time = 0.0
 
-
     @staticmethod
     def exit(boy, event):
         if event == SPACE:
