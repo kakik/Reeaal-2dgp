@@ -85,8 +85,8 @@ prepare_turtle_canvas()
 points=[(-300, 200), (400, 350), (300, -300), (-200, -200)]
 n=0
 size=4
-while True:
-    draw_curve_4_points(points[(n-1)%size],points[n%size],points[(n+1)%size],points[(n+2)%size])
-    n = (n + 1) % size
+#while True:
+draw_curve_4_points(points[(n-1)%size],points[n%size],points[(n+1)%size],points[(n+2)%size])
+    #n = (n + 1) % size
 
 turtle.done()
