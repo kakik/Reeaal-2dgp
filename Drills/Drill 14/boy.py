@@ -143,6 +143,7 @@ class Boy:
     def add_event(self, event):
         self.event_que.insert(0, event)
 
+
     def update(self):
         self.cur_state.do(self)
         if len(self.event_que) > 0:
