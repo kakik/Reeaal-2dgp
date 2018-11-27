@@ -66,6 +66,6 @@ class ranking():
         for data in self.data:
             self.font.draw(650, 800-30*i, '(%d. %3.2f)' %(i+1, data), (0, 0, 0))
             i +=1
-            if i>=9:
+            if i>=10:
                 break
 
